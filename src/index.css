@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-void: #060B19;
+  --color-nebula: #102347;
+  --color-cyan-electric: #23A9F2;
+  --color-nasa-cobalt: #0B3D91;
+  --color-solar-gold: #F4A938;
+  --color-martian: #D95A2B;
+  --color-starlight: #F8FAFC;
+  --color-lunar: #94A3B8;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-void: #060B19;
+  --surface-navy: #102347;
+  --accent-cyan: #23A9F2;
+  --accent-cobalt: #0B3D91;
+  --accent-gold: #F4A938;
+  --accent-terracotta: #D95A2B;
+  --text-starlight: #F8FAFC;
+  --text-lunar: #94A3B8;
+  --border-hairline: rgba(148, 163, 184, 0.2);
+}
+
+html {
+  background-color: #060B19;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: #060B19;
+  color: #F8FAFC;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom hairline border utility */
+.hairline-border {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Custom hero spotlight mask driven purely by CSS variables */
+.hero-flashlight-veil {
+  --mouse-x: 50%;
+  --mouse-y: 45%;
+  --spot-radius: 260px;
+  background: radial-gradient(
+    circle var(--spot-radius) at var(--mouse-x) var(--mouse-y),
+    rgba(6, 11, 25, 0.08) 0%,
+    rgba(6, 11, 25, 0.48) 38%,
+    rgba(6, 11, 25, 0.96) 76%,
+    rgba(6, 11, 25, 0.96) 100%
+  );
+  will-change: background;
+}
+
+.hero-flashlight-halo {
+  --mouse-x: 50%;
+  --mouse-y: 45%;
+  --spot-radius: 260px;
+  background: radial-gradient(
+    circle calc(var(--spot-radius) * 1.15) at var(--mouse-x) var(--mouse-y),
+    rgba(35, 169, 242, 0.14) 0%,
+    rgba(35, 169, 242, 0.05) 45%,
+    transparent 74%
+  );
+  will-change: background;
+}
+
+/* Range input styling for 3D explode slider & comparison scrubber */
+input[type="range"].pm-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].pm-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.28);
+}
+
+input[type="range"].pm-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #23A9F2;
+  border: 2px solid #F8FAFC;
+  box-shadow: 0 0 12px rgba(35, 169, 242, 0.55);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"].pm-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"].pm-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.28);
+}
+
+input[type="range"].pm-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #23A9F2;
+  border: 2px solid #F8FAFC;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

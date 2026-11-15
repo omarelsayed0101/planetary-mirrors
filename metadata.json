@@ -1,0 +1,6 @@
+{
+  "name": "Planetary Mirrors",
+  "description": "Orbital Comparative Observatory exploring the geological twins of our solar system across Earth, the Moon, and Mars in association with the NASA Space Apps Challenge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
